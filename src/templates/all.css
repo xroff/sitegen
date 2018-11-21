@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Condensed');
+
+body {
+	padding: 0;
+	margin: 0;
+	background-color: #f2f2f2;
+	font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+	min-width: 600px;
+}
+
+a {
+	text-decoration: none;
+	color: #0000ee;
+}
+
+a:visited {
+	color: #0000ee;
+}
+
+.mainnav {
+	list-style: none;
+	margin: 0;
+	padding: 25px 0 25px;
+	text-align: center;
+	width: 100%;
+	background: #073569;
+	border-bottom: 2px solid #000000;
+}
+
+.mainnav li {
+	display: inline-block;
+	background: transparent;
+}
+
+.mainnav li a {
+	padding: 10px 15px;
+	background-color: #f2f2f2;
+	font-family: 'Ubuntu Condensed', sans-serif;
+	font-size: 14pt;
+	transition: background-color 0.5s ease-out 0s;
+	color: #000000;
+}
+
+.mainnav li a:hover {
+	background-color: #8fc2fc;
+
+}
+
+.mainnav li a.active {
+	/*border-bottom: 4px solid #000000;*/
+	border-top: 6px solid #c32626;
+}
+
+.article {
+	background-color: #ffffff;
+	max-width: 1024px;
+	width: 90%;
+	margin: 20px auto;
+	padding: 20px 40px;
+	font-size: 14pt;
+	box-shadow: 0 0 10px #000000;
+}
+
+#footer {
+	position: absolute;
+	bottom: 0;
+	background: #073569;
+	height: 40px;
+	width: 100%;
+}
+
+#copyright {
+	color: #ffffff;
+	display: inline-block;
+	vertical-align: middle;
+	margin: 5px 5px 0 0;
+	float: right;
+}
