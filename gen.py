@@ -62,7 +62,9 @@ def genPages(srcDir, siteDir, menuList, conf):
 			print('Menu for {}'.format(pageConf['title']))                                               #Debug
 			print(menuBlock)                                                                         #Debug
 			# Generate contentBlock
-			for article in listdir(dirPath):
+			articleList = listdir(dirPath)
+			articleList.sort()
+			for article in articleList:
 				articlePath = join(dirPath,article)
 				if isfile(articlePath) and article[-5:] == '.html': # only html
 					print('Found article', articlePath)                                              #Debug
