@@ -1,6 +1,7 @@
 {
 "title": "Первый образовательный it форум",
 "templatesDir": "templates",
+"pagesDir": "pages",
 "mainTemplate": "main.thtml",
 "menuTemplate": "menu.thtml",
 "contentTemplate": "content.thtml"
