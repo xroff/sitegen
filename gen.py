@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import json
+import markdown
 from os import mkdir, listdir
 from os.path import isfile, isdir, join
 
@@ -66,11 +67,18 @@ def genPages(srcDir, siteDir, menuList, conf):
 			articleList.sort()
 			for article in articleList:
 				articlePath = join(dirPath,article)
-				if isfile(articlePath) and article[-5:] == '.html': # only html
-					print('Found article', articlePath)                                              #Debug
-					with open(articlePath) as f:
-						articleText = f.read()
-					contentBlock += contentTemplateStr.format(text=articleText)
+				if isfile(articlePath):
+					if article[-5:] == '.html': # only html
+						print('Found html article', articlePath)                                              #Debug
+						with open(articlePath) as f:
+							articleText = f.read()
+						contentBlock += contentTemplateStr.format(text=articleText)
+					elif article[-3:] == '.md': # markdown
+						print('Found markdown article', articlePath)
+						with open(articlePath) as f:
+							articleText = f.read()
+						articleText = markdown.markdown(articleText)
+						contentBlock += contentTemplateStr.format(text=articleText)
 			print('Content for', pageConf['link'])
 			print(contentBlock)                                                                      #Debug
 			# Generate html
@@ -92,10 +100,6 @@ menuList = genMenuList(srcDir,globalConf)
 print('Menu list:', menuList)
 
 genPages(srcDir, siteDir, menuList, globalConf)
-
-				
-
-			
 
 
 
