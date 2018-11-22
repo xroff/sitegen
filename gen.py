@@ -72,11 +72,7 @@ def genPages(srcDir, siteDir, menuList, conf):
 			print('Content for', pageConf['link'])
 			print(contentBlock)                                                                      #Debug
 			# Generate html
-<<<<<<< HEAD
 			pageTitle = pageConf['title'] + ' - ' + conf['title']
-=======
-			pageTitle = pageConf['title'] + conf['title']
->>>>>>> 1a7df553f94322fe3acd86846e56241f3f9243f2
 			with open(join(siteDir,pageConf['link']),'w') as f:
 				f.write(mainTemplateStr.format(title=pageTitle,menu=menuBlock,content=contentBlock))
 				
